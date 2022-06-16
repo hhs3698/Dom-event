@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onclick="sayHello()" type="button" value="버튼1">
+    <input id="btn" type="button" value="버튼2">
+    <input id="btn2" type="button" value="버튼3">
+    <input type="button" value="버튼4">
+    <input id="txt"type="text">
+<script>
+    function sayHello(){
+        alert("hello")
+    }//1번째
+    const el = document.querySelector("#btn");
+    el.onclick = sayHello //2번째
+
+    const el2 = document.querySelector("#btn2")
+    el2.onclick = sayHello// 3번째
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        document.body.style.backgroundColor = "orange";
+    }) //4번째
+
+    // 자주사용하는 이벤트 리스터(dbclick, keydown, keyup,focus, blur)
+    const input = document.getElementById("txt");
+    input.addEventListener("keyup", (e)=>{
+        console.log(e.target.value)
+    })
+    input.addEventListener("focus", ()=>{
+        input.style.backgroundColor = "red"
+    })
+    input.addEventListener("blur", ()=>{
+        input.style.backgroundColor = null
+    })
+</script>
+</body>
+</html>

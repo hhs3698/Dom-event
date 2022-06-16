@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="border:3px solid blue; padding: 30px">
+    
+        <fieldset style="border:2px solid green; padding:20px" >
+            <legend style="border:1px solid black; padding: 10px">
+                <input type="button" value="submit">
+            </legend>
+        </fieldset>
+<script>
+    function handler(event){
+        console.log(event.target.nodeName, this.nodeName) //event.target은 내가 직접 눌렀던 것, this는 각각의 이벤트 
+    }
+    document.querySelector('body').addEventListener('click', handler, true);
+    document.querySelector('fieldset').addEventListener('click', handler, true);
+    document.querySelector('legend').addEventListener('click', handler, true);
+    document.querySelector('input').addEventListener('click', handler, true);
+//이벤트  캡처링은 위에서 아래로 부모로부터 해당되는 자식까지 순차적으로 모든 이벤트가 발생한다. 
+</script>
+</body>
+</html>
